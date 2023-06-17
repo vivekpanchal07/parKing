@@ -5,7 +5,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MapComponent } from './map/map.component';
-import { ParkingInfoComponent } from './shared/components/parking-info/parking-info.component';
 import { LoginComponent } from './shared/components/login/login.component';
 import { TopnavComponent } from './navbar/topnav/topnav.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -24,7 +23,6 @@ import { ParkingSpotDetailsComponent } from './shared/components/parking-spot-de
   declarations: [
     AppComponent,
     MapComponent,
-    ParkingInfoComponent,
     LoginComponent,
     TopnavComponent,
     PhoneSignInModalComponent,
