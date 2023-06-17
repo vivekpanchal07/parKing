@@ -18,6 +18,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { PhoneSignInModalComponent } from './shared/components/phone-sign-in-modal/phone-sign-in-modal.component';
 import { BetaComponent } from './shared/components/beta/beta.component';
 import { ParkingSpotListComponent } from './shared/components/parking-spot-list/parking-spot-list.component';
+import { ParkingSpotDetailsComponent } from './shared/components/parking-spot-details/parking-spot-details.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ParkingSpotListComponent } from './shared/components/parking-spot-list/
     PhoneSignInModalComponent,
     BetaComponent,
     ParkingSpotListComponent,
+    ParkingSpotDetailsComponent,
   ],
   imports: [
     BrowserModule,

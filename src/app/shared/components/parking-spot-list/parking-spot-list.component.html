@@ -1,1 +1,24 @@
-<p>parking-spot-list works!</p>
+<div class="container">
+  <h2 class="heading mt-5">Parking Spots</h2>
+
+  <div class="row">
+    <div class="col-md-6 col-lg-4" *ngFor="let spot of parkingSpots">
+      <div class="card mb-4">
+        <img [src]="'assets/parking-images/parking-' + spot.id + '.jpg'" alt="Parking Image" class="card-img">
+        <div class="card-body">
+          <h5 class="card-title">{{ spot.name }}</h5>
+          <div class="card-details">
+            <p class="card-text">Address: {{ spot.address }}</p>
+            <p class="card-text">Facilities:
+              <i *ngFor="let facility of spot.facilities" class="fas {{ facility }}"></i>
+            </p>
+            <p class="card-text">Total Slots: {{ spot.totalSlots }}</p>
+            <p class="card-text">Available Slots: {{ spot.availableSlots }}</p>
+            <p class="card-text">Fare: ₹{{ spot.fare }}</p>
+          </div>
+          <button class="btn btn-primary">Book Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
