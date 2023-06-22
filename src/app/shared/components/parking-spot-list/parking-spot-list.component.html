@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container mt-3">
   <h2 class="heading mt-5">Parking Spots</h2>
 
   <div class="row">
@@ -16,7 +16,7 @@
             <p class="card-text">Available Slots: {{ spot.availableSlots }}</p>
             <p class="card-text">Fare: ₹{{ spot.fare }}</p>
           </div>
-          <button class="btn btn-primary">Book Now</button>
+          <button class="btn btn-primary" (click)="navigateToDetails(spot.id)">Book Now</button>
         </div>
       </div>
     </div>

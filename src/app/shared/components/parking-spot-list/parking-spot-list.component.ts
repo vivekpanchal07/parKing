@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-parking-spot-list',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ParkingSpotListComponent implements OnInit {
   parkingSpots: any[] | undefined;
+
+  constructor(private router: Router){}
 
   ngOnInit(): void {
 
@@ -61,4 +64,8 @@ export class ParkingSpotListComponent implements OnInit {
 
   }
 
+  navigateToDetails(parkingSpotId: string) {
+    console.log(parkingSpotId);
+    this.router.navigate(['/parking-spot-details', parkingSpotId]);
+  }
 }

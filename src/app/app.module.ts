@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { environment } from '../environments/environment';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +19,9 @@ import { PhoneSignInModalComponent } from './shared/components/phone-sign-in-mod
 import { BetaComponent } from './shared/components/beta/beta.component';
 import { ParkingSpotListComponent } from './shared/components/parking-spot-list/parking-spot-list.component';
 import { ParkingSpotDetailsComponent } from './shared/components/parking-spot-details/parking-spot-details.component';
+import { ParkingSpotService } from './shared/services/parking-spot.service';
+import { AngularFireModule } from '@angular/fire/compat';
+
 
 @NgModule({
   declarations: [
@@ -41,7 +45,8 @@ import { ParkingSpotDetailsComponent } from './shared/components/parking-spot-de
     MatSelectModule,
     MatInputModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
   ],
   providers: [],
   bootstrap: [AppComponent]

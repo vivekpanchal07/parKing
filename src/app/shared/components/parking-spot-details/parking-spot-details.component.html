@@ -1,1 +1,34 @@
-<p>parking-spot-details works!</p>
+<div class="parking-spot-details">
+  <div class="card mt-5">
+    <div class="card-content">
+      <div class="image-container">
+        <img [src]="'assets/parking-images/parking-' + parkingSpot!.id + '.jpg'" alt="Parking Image" class="card-img">
+      </div>
+      <div class="details-container">
+        <h2 class="parking-spot-title">{{ parkingSpot!.name }}</h2>
+        <p class="parking-spot-address">{{ parkingSpot!.address }}</p>
+        <div class="facilities">
+          <h3 class="section-title">Facilities</h3>
+          <ul class="facilities-list">
+            <li *ngFor="let facility of parkingSpot!.facilities" class="facility-item">
+              <i class="fas {{ facility }}"></i>
+              <!-- <span class="facility-icon">{{ facility.icon }}</span>
+              <span class="facility-name">{{ facility.name }}</span> -->
+            </li>
+          </ul>
+        </div>
+        <div class="slots">
+          <h3 class="section-title">Parking Slots</h3>
+          <p class="slots-count">
+            Total Slots: {{ parkingSpot!.totalSlots }} | Available Slots: {{ parkingSpot!.availableSlots }}
+          </p>
+        </div>
+        <div class="fare">
+          <h3 class="section-title">Fare</h3>
+          <p class="fare-amount">₹{{ parkingSpot!.fare }}/hour</p>
+        </div>
+        <button class="book-now-button">Book Now</button>
+      </div>
+    </div>
+  </div>
+</div>
