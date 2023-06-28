@@ -1,15 +1,28 @@
 <h1 mat-dialog-title>Login using Phone</h1>
 <div mat-dialog-content>
-  <div class="form-group">
-    <label for="text">Phone Number</label>
-    <input type="text" id="phoneNo" class="form-control" formControlName="phoneNo"
-           [ngClass]="{ 'is-invalid': signinForm.get('phoneNo')?.invalid && signinForm.get('phoneNo')?.touched }">
-    <div class="invalid-feedback" *ngIf="signinForm.get('phoneNo')?.invalid && signinForm.get('phoneNo')?.touched">
-      Please enter a password.
+  <form [formGroup]="signinOtpForm" autocomplete="off">
+    <div class="form-group">
+      <label for="text">Phone Number</label>
+      <input type="text" id="phoneNo" class="form-control" formControlName="phoneNo"
+        [ngClass]="{ 'is-invalid': signinOtpForm.get('phoneNo')?.invalid && signinOtpForm.get('phoneNo')?.touched }">
+      <div class="invalid-feedback" *ngIf="signinOtpForm.get('phoneNo')?.invalid && signinOtpForm.get('phoneNo')?.touched">
+        Please enter a Phone Number.
+      </div>
     </div>
-  </div>
+    <div class="form-group" *ngIf="showOTP">
+      <label for="text">Enter OTP</label>
+      <input type="text" id="phoneOtp" class="form-control" formControlName="phoneOtp"
+        [ngClass]="{ 'is-invalid': signinOtpForm.get('phoneOtp')?.invalid && signinOtpForm.get('phoneOtp')?.touched }">
+      <div class="invalid-feedback" *ngIf="signinOtpForm.get('phoneOtp')?.invalid && signinOtpForm.get('phoneOtp')?.touched">
+        Please enter a valid OTP.
+      </div>
+    </div>
+    <button class="btn btn-primary mt-2" *ngIf="!showOTP" (click)="sendOTP()"> Send OTP </button>
+    <button class="btn btn-primary mt-2" *ngIf="showOTP" (click)="validateOTP()"> Validate OTP </button>
+  </form>
+
 </div>
-<div mat-dialog-actions>
+<!-- <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">No Thanks</button>
   <button mat-button cdkFocusInitial>Ok</button>
-</div>
+</div> -->

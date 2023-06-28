@@ -1,0 +1,12 @@
+<div class="ticket">
+  <div class="qr-code" id="qrcode">
+    <qr-code [value]="'https://vivek-panchal.netlify.app/'" [size]="150" [level]="'M'"> </qr-code>
+  </div>
+  <div class="parking-details">
+    <h2>Ticket Number: {{ parkingDetails!.ticketNumber }}</h2>
+    <p>Vehicle Number: {{ parkingDetails!.vehicleNumber }}</p>
+    <p>Parking Spot: {{ parkingDetails!.parkingSpot }}</p>
+    <p>Start Time: {{ parkingDetails!.startTime }}</p>
+    <p>End Time: {{ parkingDetails!.endTime }}</p>
+  </div>
+</div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ParkingSpot } from './../../models/parking-spot.model';
 import { ParkingSpotService } from '../../services/parking-spot.service';
 
@@ -11,11 +11,12 @@ import { ParkingSpotService } from '../../services/parking-spot.service';
 export class ParkingSpotDetailsComponent implements OnInit{
 
   parkingSpot: ParkingSpot | null | undefined;
-  
+
 
   constructor(
     private route: ActivatedRoute,
-    private parkingSpotService: ParkingSpotService
+    private parkingSpotService: ParkingSpotService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -30,5 +31,8 @@ export class ParkingSpotDetailsComponent implements OnInit{
         this.parkingSpot = parkingSpot;
         console.log(parkingSpot)
       });
-}
+  }
+  bookTicket(){
+    this.router.navigate(['/slot']);
+  }
 }

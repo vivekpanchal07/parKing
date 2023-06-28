@@ -21,6 +21,15 @@ import { ParkingSpotListComponent } from './shared/components/parking-spot-list/
 import { ParkingSpotDetailsComponent } from './shared/components/parking-spot-details/parking-spot-details.component';
 import { ParkingSpotService } from './shared/services/parking-spot.service';
 import { AngularFireModule } from '@angular/fire/compat';
+import { AuthService } from './shared/services/auth.service';
+import { ParkingTicketComponent } from './shared/components/parking-ticket/parking-ticket.component';
+// import { QRCodeModule } from 'angularx-qrcode';
+import { QRCodeModule } from 'angular2-qrcode';
+import { ToastrModule } from 'ngx-toastr';
+import { SlotsLayoutComponent } from './shared/components/slots-layout/slots-layout.component';
+import { AdminDashboardComponent } from './shared/components/dashboard/admin-dashboard/admin-dashboard.component';
+
+
 
 
 @NgModule({
@@ -33,6 +42,9 @@ import { AngularFireModule } from '@angular/fire/compat';
     BetaComponent,
     ParkingSpotListComponent,
     ParkingSpotDetailsComponent,
+    ParkingTicketComponent,
+    SlotsLayoutComponent,
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -46,9 +58,11 @@ import { AngularFireModule } from '@angular/fire/compat';
     MatInputModule,
     MatButtonModule,
     MatDialogModule,
+    QRCodeModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
+    ToastrModule.forRoot()
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
